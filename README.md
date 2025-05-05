@@ -11,7 +11,7 @@ This is a responsive, single-page portfolio built with HTML, CSS (Bootstrap), an
 
 ### 📍 Live Site
 
-👉 [Visit Portfolio](https://maheshiare.github.io/mahesh-portfolio/)
+👉 [Visit Portfolio](https://maheshiare.github.io/my-portfolio/)
 
 ---
 
