@@ -77,12 +77,12 @@ export default function HomePage() {
           </div>
         </div>
         <nav className="max-w-4xl mx-auto px-4 py-2 flex gap-4 text-md overflow-x-auto">
-          <a href="#about"><span class="text-l mb-2 flex items-center"><FaUserTie className="mr-2"/>About</span></a>
-          <a href="#skills"><span class="text-l mb-2 flex items-center"><FaLaptopCode className="mr-2"/>Skills</span></a>
-          <a href="#projects"><span class="text-l mb-2 flex items-center"><FaProjectDiagram className="mr-2"/>Projects</span></a>
-          <a href="#achievements"><span class="text-l mb-2 flex items-center"><FaAward className="mr-2"/>Achievements</span></a>
-          <a href="#passions"><span class="text-l mb-2 flex items-center"><FaHeart className="mr-2"/>Passions</span></a>
-          <a href="#contact"><span class="text-l mb-2 flex items-center"><FaAddressCard className="mr-2"/>Contact</span></a>
+          <a href="#about" className="text-l mb-2 flex items-center"><FaUserTie className="mr-2" />About</a>
+          <a href="#skills" className="text-l mb-2 flex items-center"><FaLaptopCode className="mr-2" />Skills</a>
+          <a href="#projects" className="text-l mb-2 flex items-center"><FaProjectDiagram className="mr-2" />Projects</a>
+          <a href="#achievements" className="text-l mb-2 flex items-center"><FaAward className="mr-2" />Achievements</a>
+          <a href="#passions" className="text-l mb-2 flex items-center"><FaHeart className="mr-2" />Passions</a>
+          <a href="#contact" className="text-l mb-2 flex items-center"><FaAddressCard className="mr-2" />Contact</a>
         </nav>
       </header>
 
