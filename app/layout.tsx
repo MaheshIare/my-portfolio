@@ -1,5 +1,3 @@
-'use client';
-
 import { ThemeProvider } from 'next-themes';
 import './global.css'; // adjust path if needed
 export const metadata = {
