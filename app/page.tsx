@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Card, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import {
   FaGithub, FaLinkedin, FaMedium, FaCloud, FaCode, FaEnvelope, FaMobileAlt,
   FaAward, FaHeart, FaPuzzlePiece, FaLaptopCode, FaTasks, FaProjectDiagram,
@@ -42,51 +42,83 @@ export default function Portfolio() {
     <main className="min-h-screen px-4 py-10 bg-gradient-to-br from-slate-900 via-sky-900 to-indigo-900 text-white">
       <div className="flex justify-between items-center max-w-5xl mx-auto mb-6">
         <div>
-          <motion.h1 className="text-4xl font-bold mb-1" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }}>Mahesh Kumar Gutam</motion.h1>
-          <motion.p className="text-lg text-slate-300" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>Software Developer | Backend & Cloud Specialist</motion.p>
+          <motion.h1
+            className="text-4xl font-bold mb-1"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Mahesh Kumar Gutam
+          </motion.h1>
+          <motion.p
+            className="text-lg text-slate-300"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
+            Software Developer | Backend & Cloud Specialist
+          </motion.p>
         </div>
         <div className="flex items-center gap-3">
-          <a href="/MaheshKumarGutam_Resume.pdf" download className="text-sm flex items-center gap-1 px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80"><FaDownload /> Resume</a>
+          <a href="/MaheshKumarGutam_2025_8686.pdf" download className="text-sm flex items-center gap-1 px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80"><FaDownload /> Resume</a>
           <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 w-10 h-10 border rounded">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </Button>
         </div>
       </div>
 
-      <Tabs value={tab} onValueChange={setTab} className="max-w-5xl mx-auto">
+      <Tabs value={tab} className="max-w-5xl mx-auto">
         <TabsList className="flex justify-center flex-wrap gap-2 bg-white/10 p-4 rounded-xl mb-8">
-          <TabsTrigger value="about">About</TabsTrigger>
-          <TabsTrigger value="skills">Skills</TabsTrigger>
-          <TabsTrigger value="projects">Projects</TabsTrigger>
-          <TabsTrigger value="achievements">Achievements</TabsTrigger>
-          <TabsTrigger value="contact">Contact</TabsTrigger>
+          {['about', 'skills', 'projects', 'achievements', 'contact'].map((name) => (
+            <TabsTrigger key={name} value={name} onClick={setTab}>{name.charAt(0).toUpperCase() + name.slice(1)}</TabsTrigger>
+          ))}
         </TabsList>
 
         <TabsContent value="about">
-          <section className="bg-white/10 p-6 rounded-xl shadow mb-10">
+          <motion.section
+            className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500">About</h2>
             <p className="text-center">With over 12 years of experience in backend development and cloud technologies, I have delivered impactful solutions at leading organizations like Salesforce, JPMorgan, and DBS Bank.</p>
-          </section>
+          </motion.section>
         </TabsContent>
 
         <TabsContent value="skills">
-          <section className="bg-white/10 p-6 rounded-xl shadow mb-10">
+          <motion.section
+            className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaLaptopCode className="mr-2" />Skills</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {skills.map((s, i) => (
-                <Card key={i} className="border border-slate-600">
-                  <CardContent className="flex items-center gap-4 p-4">
+                <Card key={i} className="border border-slate-600 hover:border-white hover:bg-white/20 transition-all duration-200">
+                  <CardContent className="flex items-center gap-4 p-4 transition-transform hover:scale-105">
                     <div className="text-xl">{s.icon}</div>
                     <div>{s.text}</div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-          </section>
+          </motion.section>
         </TabsContent>
 
         <TabsContent value="projects">
-          <section className="bg-white/10 p-6 rounded-xl shadow mb-10">
+          <motion.section
+            className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaTasks className="mr-2" />Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projects.map((p, i) => (
@@ -98,11 +130,17 @@ export default function Portfolio() {
                 </Card>
               ))}
             </div>
-          </section>
+          </motion.section>
         </TabsContent>
 
         <TabsContent value="achievements">
-          <section className="bg-white/10 p-6 rounded-xl shadow mb-10">
+          <motion.section
+            className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaAward className="mr-2" />Achievements</h2>
             <div className="space-y-6">
               <div>
@@ -124,11 +162,17 @@ export default function Portfolio() {
                 </ul>
               </div>
             </div>
-          </section>
+          </motion.section>
         </TabsContent>
 
         <TabsContent value="contact">
-          <section className="bg-white/10 p-6 rounded-xl shadow mb-10">
+          <motion.section
+            className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaEnvelope className="mr-2" />Contact</h2>
             <div className="space-y-3 text-sm">
               <p><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com" className="underline">mahesh.gutam8686@gmail.com</a></p>
@@ -137,7 +181,7 @@ export default function Portfolio() {
               <p><FaGithub className="inline mr-2" /> <a href="https://github.com/MaheshIare" target="_blank" className="underline">GitHub</a></p>
               <p><FaMedium className="inline mr-2" /> <a href="https://medium.com/@maheshkumar-iare" target="_blank" className="underline">Medium</a></p>
             </div>
-          </section>
+          </motion.section>
         </TabsContent>
       </Tabs>
 
