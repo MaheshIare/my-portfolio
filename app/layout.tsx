@@ -1,3 +1,6 @@
+'use client';
+
+import { ThemeProvider } from 'next-themes';
 import './global.css'; // adjust path if needed
 export const metadata = {
   title: 'Mahesh Kumar Gutam Portfolio',
@@ -10,8 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
