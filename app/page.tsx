@@ -94,9 +94,9 @@ export default function HomePage() {
 
         <section id="skills" className="reveal-on-scroll">
           <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaLaptopCode className="mr-2" />Skills</h2>
-          <ul className="grid sm:grid-cols-2 gap-3">
+          <ul className="grid sm:grid-cols-2">
             {skills.map((skill, i) => (
-              <li key={i} className="p-3 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
+              <li key={i} className="p-6 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
                 <div className="flex items-center gap-2">{skill.icon}<span>{skill.text}</span></div>
               </li>
             ))}
@@ -108,7 +108,7 @@ export default function HomePage() {
           <ul className="grid sm:grid-cols-2 gap-3">
             {projects.map((project, i) => (
               <li key={i} className="p-3 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
-                <div className="flex items-center gap-2">{project.title}<span>{project.description}</span></div>
+                <div className="flex items-center gap-2">{project.title}<br/><span>{project.description}</span></div>
               </li>
             ))}
           </ul>
