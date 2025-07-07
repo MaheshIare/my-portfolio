@@ -26,6 +26,7 @@ h1, h2, h3 {
 /* Section spacing */
 section {
   @apply py-8 border-b border-slate-200 dark:border-slate-700;
+  scroll-margin-top: 90px;
 }
 
 /* Link styles */
