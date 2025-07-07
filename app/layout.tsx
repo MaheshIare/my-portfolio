@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'next-themes';
+import { ThemeProviderWrapper } from '../components/theme-provider';
 import './global.css'; // adjust path if needed
 export const metadata = {
   title: 'Mahesh Kumar Gutam Portfolio',
