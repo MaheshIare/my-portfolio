@@ -2,9 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: custom global styles */
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: system-ui, sans-serif;
+/* Smooth scrolling behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve default font and layout appearance */
+body {
+  @apply bg-white dark:bg-black text-black dark:text-white font-sans leading-relaxed;
+}
+
+/* Headings */
+h1, h2, h3 {
+  @apply text-slate-900 dark:text-slate-100;
+}
+
+/* Section spacing */
+section {
+  @apply py-8 border-b border-slate-200 dark:border-slate-700;
+}
+
+/* Link styles */
+a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+/* Navbar styling */
+header nav a {
+  @apply px-3 py-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition;
+}
+
+/* Custom button outline variant support */
+button[data-variant='outline'] {
+  @apply border border-slate-300 dark:border-slate-600;
 }

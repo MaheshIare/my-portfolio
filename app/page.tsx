@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from 'react';
+import { useTheme } from 'next-themes';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import {
-  FaGithub, FaLinkedin, FaMedium, FaCloud, FaCode, FaEnvelope, FaMobileAlt,
-  FaAward, FaHeart, FaPuzzlePiece, FaLaptopCode, FaTasks, FaProjectDiagram,
-  FaDatabase, FaCogs, FaTools, FaDownload, FaSun, FaMoon
+  FaGithub, FaLinkedin, FaMedium, FaDownload,
+  FaEnvelope, FaMobileAlt, FaSun, FaMoon,
+  FaCode, FaCloud, FaTools, FaDatabase, FaPuzzlePiece, FaCogs, FaAward, FaHeart, FaProjectDiagram
 } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
 
 const skills = [
   { icon: <FaCode />, text: 'Java, Python' },
@@ -22,17 +20,17 @@ const skills = [
 ];
 
 const projects = [
-  { title: 'Your Account - Salesforce (Present)', description: 'A self-service app within Salesforce that lets customers manage subscriptions, licenses, and payments. I led key backend components for entitlement sync, credit card payment flow, and secure document access.' },
-  { title: 'ECI Manual Upload - Salesforce', description: 'Developed a feature for manual upload of call recordings (voice/video) in various formats, providing insights and analysis to improve customer service.' },
-  { title: 'CRMA ECI Dashboard - Salesforce', description: 'Built a dashboard using CRM Analytics to visualise conversational data from Einstein Conversation Insights, providing business insights from conversations.' },
-  { title: 'AFHT - Salesforce', description: 'Developed a top-voted feature in Salesforce CRM that allows users to track the audit/history of sales reps’ updates, providing a detailed view of activities.' },
-  { title: 'Activities Analytics Dashboard - Salesforce', description: 'Designed a dashboard in Salesforce CRM to visualise sales rep activity data, helping businesses track performance metrics.' },
-  { title: 'Lightning Sync - EAC - Salesforce', description: 'Developed tools to enhance the sync engine between Salesforce and external channels like Microsoft Exchange and Google for seamless calendar, email, and contact syncing.' },
+  { title: 'Your Account - Salesforce (01/2025 - Present)', description: 'A self-service app within Salesforce that lets customers manage subscriptions, licenses, and payments. I led key backend components for entitlement sync, credit card payment flow, and secure document access.' },
+  { title: 'ECI Manual Upload - Salesforce (01/2024 - 04/2024)', description: 'Developed a feature for manual upload of call recordings (voice/video) in various formats, providing insights and analysis to improve customer service.' },
+  { title: 'CRMA ECI Dashboard - Salesforce (05/2023 - 12/2023)', description: 'Built a dashboard using CRM Analytics to visualise conversational data from Einstein Conversation Insights, providing business insights from conversations.' },
+  { title: 'AFHT - Salesforce (01/2023 - 05/2023)', description: 'Developed a top-voted feature in Salesforce CRM that allows users to track the audit/history of sales reps’ updates, providing a detailed view of activities.' },
+  { title: 'Activities Analytics Dashboard - Salesforce (08/2022 - 12/2022)', description: 'Designed a dashboard in Salesforce CRM to visualise sales rep activity data, helping businesses track performance metrics.' },
+  { title: 'Lightning Sync - EAC - Salesforce (02/2022 - 07/2022)', description: 'Developed tools to enhance the sync engine between Salesforce and external channels like Microsoft Exchange and Google for seamless calendar, email, and contact syncing.' },
   { title: 'ITSM Products (Salesforce)', description: 'Improved IT service management capabilities with scalable backend services.' },
   { title: 'PayLah Migration (DBS)', description: 'Migrated monolith to microservices, achieving 90% cloud deployment.' },
   { title: 'Prospecting Centre (Salesforce)', description: 'Enhanced lead management efficiency with AI integration.' },
   { title: 'Digital Arrangement Accounts (JP Morgan)', description: 'Designed Kafka-based event orchestration to improve stakeholder notifications.' },
-  { title: 'SAILOR - DBS Bank', description: 'Developed backend APIs for a financial advisor platform that integrates with banking activities, helping customers track budgets and financial goals.' }
+  { title: 'SAILOR - DBS Bank (08/2018 - 04/2019)', description: 'Developed backend APIs for a financial advisor platform that integrates with banking activities, helping customers track budgets and financial goals.' }
 ];
 
 const achievements = {
@@ -46,114 +44,64 @@ const passions = [
   'Solving Complex Technical Challenges'
 ];
 
-export default function Portfolio() {
-  const [tab, setTab] = useState('about');
+export default function HomePage() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <main className="min-h-screen px-4 py-10 bg-gradient-to-br from-slate-900 via-sky-900 to-indigo-900 text-white">
-      <div className="flex justify-between items-center max-w-5xl mx-auto mb-6">
-        <div>
-          <motion.h1
-            className="text-4xl font-bold mb-1"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Mahesh Kumar Gutam
-          </motion.h1>
-          <motion.p
-            className="text-lg text-slate-300"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-          >
-            Software Developer | Backend & Cloud Specialist
-          </motion.p>
+    <>
+      <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-slate-300 dark:border-slate-700">
+        <div className="max-w-4xl mx-auto px-4 py-2 flex justify-between items-center">
+          <h1 className="text-lg font-semibold">Mahesh Kumar Gutam</h1>
+          <div className="flex gap-4 items-center">
+            <a href="/MaheshKumarGutam_2025_8686.pdf" download className="text-sm px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80 flex items-center gap-1"><FaDownload /> Resume</a>
+            <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} variant="outline" size="icon">
+              {theme === 'dark' ? <FaSun /> : <FaMoon />}
+            </Button>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <a href="/MaheshKumarGutam_2025_8686.pdf" download className="text-sm flex items-center gap-1 px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80"><FaDownload /> Resume</a>
-          <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 w-10 h-10 border rounded">
-            {theme === 'dark' ? <FaSun /> : <FaMoon />}
-          </Button>
-        </div>
-      </div>
+        <nav className="max-w-4xl mx-auto px-4 py-2 flex gap-4 text-sm overflow-x-auto">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#passions">Passions</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-      <Tabs value={tab} className="max-w-5xl mx-auto">
-        <TabsList className="flex justify-center flex-wrap gap-2 bg-white/10 p-4 rounded-xl mb-8">
-          {['about', 'skills', 'projects', 'achievements', 'contact'].map((name) => (
-            <TabsTrigger key={name} value={name} onClick={setTab}>{name.charAt(0).toUpperCase() + name.slice(1)}</TabsTrigger>
-          ))}
-        </TabsList>
+      <main className="max-w-4xl mx-auto px-4 py-6 space-y-10">
+        <section id="about">
+          <h2 className="text-xl font-bold mb-2">About</h2>
+          <p>With over 12 years of experience in backend development and cloud technologies, I have delivered impactful solutions at leading organizations like Salesforce, JPMorgan, and DBS Bank. My expertise spans scalable architectures, microservices, and enterprise software development.</p>
+        </section>
 
-        <TabsContent value="about">
-          <motion.section
-            className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500">About</h2>
-            <p className="text-center">With over 12 years of experience in backend development and cloud technologies, I have delivered impactful solutions at leading organizations like Salesforce, JPMorgan, and DBS Bank.</p>
-          </motion.section>
-        </TabsContent>
+        <section id="skills">
+          <h2 className="text-xl font-bold mb-2">Skills</h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {skills.map((skill, i) => (
+              <li key={i} className="p-3 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
+                <div className="flex items-center gap-2">{skill.icon}<span>{skill.text}</span></div>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-        <TabsContent value="skills">
-          <motion.section
-            className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaLaptopCode className="mr-2" />Skills</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {skills.map((s, i) => (
-                <Card key={i} className="border border-slate-600 hover:border-white hover:bg-white/20 transition-all duration-200">
-                  <CardContent className="flex items-center gap-4 p-4 transition-transform hover:scale-105">
-                    <div className="text-xl">{s.icon}</div>
-                    <div>{s.text}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.section>
-        </TabsContent>
+        <section id="projects">
+          <h2 className="text-xl font-bold mb-2">Projects</h2>
+          <div className="space-y-4">
+            {projects.map((project, i) => (
+              <Card key={i}>
+                <CardContent className="py-4">
+                  <h3 className="font-semibold">{project.title}</h3>
+                  <p className="text-sm mt-1">{project.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
-        <TabsContent value="projects">
-          <motion.section
-            className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaTasks className="mr-2" />Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {projects.map((p, i) => (
-                <Card key={i} className="bg-white/10 hover:bg-white/20 transition">
-                  <CardContent className="p-4">
-                    <h4 className="text-lg font-semibold mb-1">{p.title}</h4>
-                    <p className="text-sm text-slate-300">{p.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.section>
-        </TabsContent>
-
-        <TabsContent value="achievements">
-          <motion.section
-            className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaAward className="mr-2" />Achievements</h2>
+        <section id="achievements">
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaAward className="mr-2" />Achievements</h2>
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold mb-2">Certifications</h3>
@@ -168,49 +116,28 @@ export default function Portfolio() {
                 </ul>
               </div>            
             </div>
-          </motion.section>
-        </TabsContent>
+        </section>
 
-        <TabsContent value="passions">
-          <motion.section className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}>
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center">
-              <FaHeart className="mr-2" />Passions
-            </h2>
-            <ul className="list-disc pl-5 space-y-2">
-              {passions.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </motion.section>
-        </TabsContent>
+        <section id="passions">
+          <h2 className="text-xl font-bold mb-2">Passions</h2>
+          <ul className="list-disc pl-5 space-y-1">
+            {passions.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
 
-        <TabsContent value="contact">
-          <motion.section
-            className="bg-white/10 p-6 rounded-xl shadow mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaEnvelope className="mr-2" />Contact</h2>
-            <div className="space-y-3 text-sm">
-              <p><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com" className="underline">mahesh.gutam8686@gmail.com</a></p>
-              <p><FaMobileAlt className="inline mr-2" /> <a href="tel:+919912299262" className="underline">+91 9912299262</a></p>
-              <p><FaLinkedin className="inline mr-2" /> <a href="https://linkedin.com/in/mahesh-kumar-gutam" target="_blank" className="underline">LinkedIn</a></p>
-              <p><FaGithub className="inline mr-2" /> <a href="https://github.com/MaheshIare" target="_blank" className="underline">GitHub</a></p>
-              <p><FaMedium className="inline mr-2" /> <a href="https://medium.com/@maheshkumar-iare" target="_blank" className="underline">Medium</a></p>
-            </div>
-          </motion.section>
-        </TabsContent>
-      </Tabs>
-
-      <footer className="mt-10 text-center text-slate-400 text-sm">
-        &copy; 2025 Mahesh Kumar Gutam. All rights reserved.
-      </footer>
-    </main>
+        <section id="contact">
+          <h2 className="text-xl font-bold mb-2">Contact</h2>
+          <ul className="space-y-2">
+            <li><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com">mahesh.gutam8686@gmail.com</a></li>
+            <li><FaMobileAlt className="inline mr-2" /> <a href="tel:+919912299262">+91 9912299262</a></li>
+            <li><FaLinkedin className="inline mr-2" /> <a href="https://linkedin.com/in/mahesh-kumar-gutam" target="_blank">LinkedIn</a></li>
+            <li><FaGithub className="inline mr-2" /> <a href="https://github.com/MaheshIare" target="_blank">GitHub</a></li>
+            <li><FaMedium className="inline mr-2" /> <a href="https://medium.com/@maheshkumar-iare" target="_blank">Medium</a></li>
+          </ul>
+        </section>
+      </main>
+    </>
   );
 }
