@@ -22,17 +22,29 @@ const skills = [
 ];
 
 const projects = [
+  { title: 'Your Account - Salesforce (Present)', description: 'A self-service app within Salesforce that lets customers manage subscriptions, licenses, and payments. I led key backend components for entitlement sync, credit card payment flow, and secure document access.' },
+  { title: 'ECI Manual Upload - Salesforce', description: 'Developed a feature for manual upload of call recordings (voice/video) in various formats, providing insights and analysis to improve customer service.' },
+  { title: 'CRMA ECI Dashboard - Salesforce', description: 'Built a dashboard using CRM Analytics to visualise conversational data from Einstein Conversation Insights, providing business insights from conversations.' },
+  { title: 'AFHT - Salesforce', description: 'Developed a top-voted feature in Salesforce CRM that allows users to track the audit/history of sales reps’ updates, providing a detailed view of activities.' },
+  { title: 'Activities Analytics Dashboard - Salesforce', description: 'Designed a dashboard in Salesforce CRM to visualise sales rep activity data, helping businesses track performance metrics.' },
+  { title: 'Lightning Sync - EAC - Salesforce', description: 'Developed tools to enhance the sync engine between Salesforce and external channels like Microsoft Exchange and Google for seamless calendar, email, and contact syncing.' },
   { title: 'ITSM Products (Salesforce)', description: 'Improved IT service management capabilities with scalable backend services.' },
   { title: 'PayLah Migration (DBS)', description: 'Migrated monolith to microservices, achieving 90% cloud deployment.' },
   { title: 'Prospecting Centre (Salesforce)', description: 'Enhanced lead management efficiency with AI integration.' },
   { title: 'Digital Arrangement Accounts (JP Morgan)', description: 'Designed Kafka-based event orchestration to improve stakeholder notifications.' },
+  { title: 'SAILOR - DBS Bank', description: 'Developed backend APIs for a financial advisor platform that integrates with banking activities, helping customers track budgets and financial goals.' }
 ];
 
 const achievements = {
   certifications: ['AWS Certified Developer - Associate (2024)'],
-  awards: ['Spot Bonus Award (2022) - Salesforce', 'WOW Award (2020) - DBS', 'Gladiator Award (2019) - DBS', 'Performance Excellence Award (2016) - Napier'],
-  passions: ['Building Scalable and Resilient Systems', 'Cloud Technologies and Digital Transformation', 'Solving Complex Technical Challenges']
+  awards: ['Spot Bonus Award (2022) - Salesforce', 'WOW Award (2020) - DBS', 'Gladiator Award (2019) - DBS', 'Performance Excellence Award (2016) - Napier']
 };
+
+const passions = [
+  'Building Scalable and Resilient Systems',
+  'Cloud Technologies and Digital Transformation',
+  'Solving Complex Technical Challenges'
+];
 
 export default function Portfolio() {
   const [tab, setTab] = useState('about');
@@ -165,6 +177,23 @@ export default function Portfolio() {
           </motion.section>
         </TabsContent>
 
+        <TabsContent value="passions">
+          <motion.section className="bg-white/10 p-6 rounded-xl shadow mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}>
+            <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center">
+              <FaHeart className="mr-2" />Passions
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              {passions.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </motion.section>
+        </TabsContent>
+
         <TabsContent value="contact">
           <motion.section
             className="bg-white/10 p-6 rounded-xl shadow mb-10"
@@ -186,7 +215,7 @@ export default function Portfolio() {
       </Tabs>
 
       <footer className="mt-10 text-center text-slate-400 text-sm">
-        &copy; 2024 Mahesh Kumar Gutam. All rights reserved.
+        &copy; 2025 Mahesh Kumar Gutam. All rights reserved.
       </footer>
     </main>
   );
