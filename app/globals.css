@@ -9,7 +9,11 @@ html {
 
 /* Improve default font and layout appearance */
 body {
-  @apply bg-white dark:bg-black text-black dark:text-white font-sans leading-relaxed;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+}
+
+.dark body {
+  background: linear-gradient(to right, #1f1c2c, #928dab);
 }
 
 /* Headings */

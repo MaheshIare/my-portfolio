@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -47,6 +47,22 @@ const passions = [
 export default function HomePage() {
   const { theme, setTheme } = useTheme();
 
+  useEffect(() => {
+    const revealEls = document.querySelectorAll('.reveal-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-slate-300 dark:border-slate-700">
@@ -70,12 +86,12 @@ export default function HomePage() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-10">
-        <section id="about">
+        <section id="about" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">About</h2>
           <p>With over 12 years of experience in backend development and cloud technologies, I have delivered impactful solutions at leading organizations like Salesforce, JPMorgan, and DBS Bank. My expertise spans scalable architectures, microservices, and enterprise software development.</p>
         </section>
 
-        <section id="skills">
+        <section id="skills" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Skills</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {skills.map((skill, i) => (
@@ -86,7 +102,7 @@ export default function HomePage() {
           </ul>
         </section>
 
-        <section id="projects">
+        <section id="projects" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Projects</h2>
           <div className="space-y-4">
             {projects.map((project, i) => (
@@ -100,7 +116,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="achievements">
+        <section id="achievements" className="reveal-on-scroll">
           <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaAward className="mr-2" />Achievements</h2>
             <div className="space-y-6">
               <div>
@@ -118,7 +134,7 @@ export default function HomePage() {
             </div>
         </section>
 
-        <section id="passions">
+        <section id="passions" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Passions</h2>
           <ul className="list-disc pl-5 space-y-1">
             {passions.map((item, i) => (
@@ -127,7 +143,7 @@ export default function HomePage() {
           </ul>
         </section>
 
-        <section id="contact">
+        <section id="contact" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Contact</h2>
           <ul className="space-y-2">
             <li><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com">mahesh.gutam8686@gmail.com</a></li>
