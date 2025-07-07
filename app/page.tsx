@@ -20,17 +20,17 @@ const skills = [
 ];
 
 const projects = [
-  { title: 'Your Account - Salesforce (01/2025 - Present)', description: 'A self-service app within Salesforce that lets customers manage subscriptions, licenses, and payments. I led key backend components for entitlement sync, credit card payment flow, and secure document access.' },
-  { title: 'ECI Manual Upload - Salesforce (01/2024 - 04/2024)', description: 'Developed a feature for manual upload of call recordings (voice/video) in various formats, providing insights and analysis to improve customer service.' },
-  { title: 'CRMA ECI Dashboard - Salesforce (05/2023 - 12/2023)', description: 'Built a dashboard using CRM Analytics to visualise conversational data from Einstein Conversation Insights, providing business insights from conversations.' },
-  { title: 'AFHT - Salesforce (01/2023 - 05/2023)', description: 'Developed a top-voted feature in Salesforce CRM that allows users to track the audit/history of sales reps’ updates, providing a detailed view of activities.' },
-  { title: 'Activities Analytics Dashboard - Salesforce (08/2022 - 12/2022)', description: 'Designed a dashboard in Salesforce CRM to visualise sales rep activity data, helping businesses track performance metrics.' },
-  { title: 'Lightning Sync - EAC - Salesforce (02/2022 - 07/2022)', description: 'Developed tools to enhance the sync engine between Salesforce and external channels like Microsoft Exchange and Google for seamless calendar, email, and contact syncing.' },
-  { title: 'ITSM Products (Salesforce)', description: 'Improved IT service management capabilities with scalable backend services.' },
-  { title: 'PayLah Migration (DBS)', description: 'Migrated monolith to microservices, achieving 90% cloud deployment.' },
-  { title: 'Prospecting Centre (Salesforce)', description: 'Enhanced lead management efficiency with AI integration.' },
-  { title: 'Digital Arrangement Accounts (JP Morgan)', description: 'Designed Kafka-based event orchestration to improve stakeholder notifications.' },
-  { title: 'SAILOR - DBS Bank (08/2018 - 04/2019)', description: 'Developed backend APIs for a financial advisor platform that integrates with banking activities, helping customers track budgets and financial goals.' }
+  { title: 'Your Account - Salesforce', description: 'A self-service app within Salesforce that lets customers manage subscriptions, licenses, and payments. I led key backend components for entitlement sync, credit card payment flow, and secure document access.' },
+  { title: 'ECI Manual Upload - Salesforce', description: 'Developed a feature for manual upload of call recordings (voice/video) in various formats, providing insights and analysis to improve customer service.' },
+  { title: 'CRMA ECI Dashboard - Salesforce', description: 'Built a dashboard using CRM Analytics to visualise conversational data from Einstein Conversation Insights, providing business insights from conversations.' },
+  { title: 'AFHT - Salesforce', description: 'Developed a top-voted feature in Salesforce CRM that allows users to track the audit/history of sales reps’ updates, providing a detailed view of activities.' },
+  { title: 'Activities Analytics Dashboard - Salesforce', description: 'Designed a dashboard in Salesforce CRM to visualise sales rep activity data, helping businesses track performance metrics.' },
+  { title: 'Lightning Sync - EAC - Salesforce', description: 'Developed tools to enhance the sync engine between Salesforce and external channels like Microsoft Exchange and Google for seamless calendar, email, and contact syncing.' },
+  { title: 'ITSM Products - Salesforce', description: 'Improved IT service management capabilities with scalable backend services.' },
+  { title: 'PayLah Migration - DBS Bank', description: 'Migrated monolith to microservices, achieving 90% cloud deployment.' },
+  { title: 'Prospecting Centre - Salesforce', description: 'Enhanced lead management efficiency with AI integration.' },
+  { title: 'Digital Arrangement Accounts - JP Morgan', description: 'Designed Kafka-based event orchestration to improve stakeholder notifications.' },
+  { title: 'SAILOR - DBS Bank', description: 'Developed backend APIs for a financial advisor platform that integrates with banking activities, helping customers track budgets and financial goals.' }
 ];
 
 const achievements = {
@@ -71,7 +71,7 @@ export default function HomePage() {
           <div className="flex gap-4 items-center">
             <a href="/MaheshKumarGutam_2025_8686.pdf" download className="text-sm px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80 flex items-center gap-1"><FaDownload /> Resume</a>
             <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} variant="outline" size="icon">
-              {theme === 'dark' ? <FaSun /> : <FaMoon />}
+              {theme === 'dark' ? <FaMoon /> : <FaSun />}
             </Button>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
           <h2 className="text-xl font-bold mb-2">Skills</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {skills.map((skill, i) => (
-              <li key={i} className="p-3 bg-white dark:bg-slate-800 rounded shadow hover:scale-[0.5] transition">
+              <li key={i} className="p-3 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
                 <div className="flex items-center gap-2">{skill.icon}<span>{skill.text}</span></div>
               </li>
             ))}
@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="space-y-4">
             {projects.map((project, i) => (
               <Card key={i}>
-                <CardContent className="py-4 rounded shadow transition">
+                <CardContent className="py-4 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
                   <h3 className="font-semibold">{project.title}</h3>
                   <p className="text-sm mt-1">{project.description}</p>
                 </CardContent>
@@ -121,13 +121,13 @@ export default function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold mb-2">Certifications</h3>
-                <ul className="list-disc pl-5 rounded shadow transition">
+                <ul className="list-disc pl-5 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
                   {achievements.certifications.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </div>
               <div>
                 <h3 className="font-semibold mb-2">Awards</h3>
-                <ul className="list-disc pl-5 rounded shadow transition">
+                <ul className="list-disc pl-5 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
                   {achievements.awards.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </div>            
@@ -136,7 +136,7 @@ export default function HomePage() {
 
         <section id="passions" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Passions</h2>
-          <ul className="list-disc pl-5 space-y-1 rounded shadow transition" >
+          <ul className="list-disc pl-5 space-y-1 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition" >
             {passions.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -145,7 +145,7 @@ export default function HomePage() {
 
         <section id="contact" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Contact</h2>
-          <ul className="space-y-2 rounded shadow transition">
+          <ul className="space-y-2 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
             <li><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com">mahesh.gutam8686@gmail.com</a></li>
             <li><FaMobileAlt className="inline mr-2" /> <a href="tel:+919912299262">+91 9912299262</a></li>
             <li><FaLinkedin className="inline mr-2" /> <a href="https://linkedin.com/in/mahesh-kumar-gutam" target="_blank">LinkedIn</a></li>

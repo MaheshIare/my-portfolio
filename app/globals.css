@@ -9,13 +9,13 @@ html {
 
 /* Improve default font and layout appearance */
 body {
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-  transition: background 0.5s ease;
+  background: linear-gradient(to right, #e0f7fa, #e1bee7);
+  transition: background 1s ease;
 }
 
 .dark body {
-  background: linear-gradient(to right, #1f1c2c, #928dab);
-  transition: background 0.5s ease;
+  background: linear-gradient(to right, #141e30, #243b55);
+  transition: background 1s ease;
 }
 
 /* Headings */
