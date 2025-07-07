@@ -1,25 +1,41 @@
-# Mahesh Kumar Gutam - Portfolio
+# 💼 Mahesh Kumar Gutam – Developer Portfolio
 
-This is a responsive, single-page portfolio built with HTML, CSS (Bootstrap), and Font Awesome.
+Welcome to my personal portfolio site! This project showcases my experience as a **Backend & Cloud Specialist** with 12+ years of experience working with organizations like Salesforce, JPMorgan, and DBS.
 
-### 🚀 Features
-
-- Projects, skills, certifications, awards
-- Scroll-based active nav highlighting
-- Responsive and mobile-friendly
-- Font Awesome icons and modern layout
-
-### 📍 Live Site
-
-👉 [Visit Portfolio](https://maheshiare.github.io/my-portfolio/)
+> 🔗 Live Site: [maheshiare.github.io/my-portfolio](https://maheshiare.github.io/my-portfolio)
 
 ---
 
-### 🔧 Run Locally
+## 🚀 Tech Stack
 
-Clone the project:
+- **Next.js 13+ (App Router)**
+- **Tailwind CSS** (with shadcn/ui)
+- **Framer Motion** (animations)
+- **React Icons**
+- **GitHub Pages** (deployment)
+
+---
+
+## 📄 Features
+
+- 🔥 Modern, dark/light themed UI
+- 📁 Downloadable Resume (PDF)
+- 🎨 Smooth section animations
+- 🧭 Tab-based navigation with dynamic content
+- 📱 Fully responsive
+- 🌐 Hosted on GitHub Pages
+
+---
+
+## 🧪 Getting Started
 
 ```bash
-git clone https://github.com/yourgithubusername/mahesh-portfolio.git
-cd mahesh-portfolio
-open index.html
+# 1. Clone the repo
+git clone https://github.com/MaheshIare/my-portfolio.git
+cd my-portfolio
+
+# 2. Install dependencies
+npm install
+
+# 3. Run locally
+npm run dev
