@@ -76,13 +76,13 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-        <nav className="max-w-4xl mx-auto px-4 py-2 flex gap-4 text-sm overflow-x-auto">
-          <a href="#about"><FaUserTie className="mr-2" />About</a>
-          <a href="#skills"><FaLaptopCode className="mr-2" />Skills</a>
-          <a href="#projects"><FaProjectDiagram className="mr-2" />Projects</a>
-          <a href="#achievements"><FaAward className="mr-2" />Achievements</a>
-          <a href="#passions"><FaHeart className="mr-2" />Passions</a>
-          <a href="#contact"><FaAddressCard className="mr-2" />Contact</a>
+        <nav className="max-w-4xl mx-auto px-4 py-2 flex gap-4 text-md overflow-x-auto">
+          <a href="#about" class="text-l mb-2 flex items-center"><FaUserTie className="mr-2" />About</a>
+          <a href="#skills" class="text-l mb-2 flex items-center"><FaLaptopCode className="mr-2" />Skills</a>
+          <a href="#projects" class="text-l mb-2 flex items-center"><FaProjectDiagram className="mr-2" />Projects</a>
+          <a href="#achievements" class="text-l mb-2 flex items-center"><FaAward className="mr-2" />Achievements</a>
+          <a href="#passions" class="text-l mb-2 flex items-center"><FaHeart className="mr-2" />Passions</a>
+          <a href="#contact" class="text-l mb-2 flex items-center"><FaAddressCard className="mr-2" />Contact</a>
         </nav>
       </header>
 
@@ -105,16 +105,13 @@ export default function HomePage() {
 
         <section id="projects" className="reveal-on-scroll">
           <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaProjectDiagram className="mr-2" />Projects</h2>
-          <div className="space-y-4">
+          <ul className="grid sm:grid-cols-2 gap-3">
             {projects.map((project, i) => (
-              <Card key={i}>
-                <CardContent className="py-4 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
-                  <h3 className="font-semibold">{project.title}</h3>
-                  <p className="text-sm mt-1">{project.description}</p>
-                </CardContent>
-              </Card>
+              <li key={i} className="p-3 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
+                <div className="flex items-center gap-2">{project.title}<span>{project.description}</span></div>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
         <section id="achievements" className="reveal-on-scroll">
