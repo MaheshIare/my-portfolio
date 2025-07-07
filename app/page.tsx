@@ -166,13 +166,7 @@ export default function Portfolio() {
                 <ul className="list-disc pl-5">
                   {achievements.awards.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Passions</h3>
-                <ul className="list-disc pl-5">
-                  {achievements.passions.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              </div>
+              </div>            
             </div>
           </motion.section>
         </TabsContent>
