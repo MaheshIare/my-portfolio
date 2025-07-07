@@ -10,10 +10,12 @@ html {
 /* Improve default font and layout appearance */
 body {
   background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  transition: 1s ease;
 }
 
 .dark body {
   background: linear-gradient(to right, #1f1c2c, #928dab);
+  transition: 1s ease;
 }
 
 /* Headings */
