@@ -42,7 +42,7 @@ export default function Portfolio() {
           <motion.p className="text-lg text-slate-300 dark:text-slate-700" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>Software Developer | Backend & Cloud Specialist</motion.p>
         </div>
         <div className="flex items-center gap-3">
-          <a href="/MaheshKumarGutam_Resume.pdf" download className="text-sm flex items-center gap-1 px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80"><FaDownload /> Resume</a>
+          <a href="/MaheshKumarGutam_2025_8686.pdf" download className="text-sm flex items-center gap-1 px-3 py-1 bg-white text-black dark:bg-black dark:text-white rounded hover:bg-opacity-80"><FaDownload /> Resume</a>
           <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} variant="outline" size="icon">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </Button>
