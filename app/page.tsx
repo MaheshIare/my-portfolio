@@ -7,7 +7,8 @@ import { Button } from '../components/ui/button';
 import {
   FaGithub, FaLinkedin, FaMedium, FaDownload,
   FaEnvelope, FaMobileAlt, FaSun, FaMoon,
-  FaCode, FaCloud, FaTools, FaDatabase, FaPuzzlePiece, FaCogs, FaAward, FaHeart, FaProjectDiagram
+  FaCode, FaCloud, FaTools, FaDatabase, FaPuzzlePiece, FaCogs, FaAward, FaHeart, FaProjectDiagram, FaUserTie,
+  FaLaptopCode, FaAddressCard
 } from 'react-icons/fa';
 
 const skills = [
@@ -76,26 +77,26 @@ export default function HomePage() {
           </div>
         </div>
         <nav className="max-w-4xl mx-auto px-4 py-2 flex gap-4 text-sm overflow-x-auto">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#achievements">Achievements</a>
-          <a href="#passions">Passions</a>
-          <a href="#contact">Contact</a>
+          <a href="#about"><FaUserTie className="mr-2" />About</a>
+          <a href="#skills"><FaLaptopCode className="mr-2" />Skills</a>
+          <a href="#projects"><FaProjectDiagram className="mr-2" />Projects</a>
+          <a href="#achievements"><FaAward className="mr-2" />Achievements</a>
+          <a href="#passions"><FaHeart className="mr-2" />Passions</a>
+          <a href="#contact"><FaAddressCard className="mr-2" />Contact</a>
         </nav>
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-10">
         <section id="about" className="reveal-on-scroll">
-          <h2 className="text-xl font-bold mb-2 border-b pb-2 border-slate-500">About</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaUserTie className="mr-2" />About</h2>
           <p>With over 12 years of experience in backend development and cloud technologies, I have delivered impactful solutions at leading organizations like Salesforce, JPMorgan, and DBS Bank. My expertise spans scalable architectures, microservices, and enterprise software development.</p>
         </section>
 
         <section id="skills" className="reveal-on-scroll">
-          <h2 className="text-xl font-bold mb-2 border-b pb-2 border-slate-500">Skills</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaLaptopCode className="mr-2" />Skills</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {skills.map((skill, i) => (
-              <li key={i} className="p-3 bg-white dark:bg-slate-800 rounded shadow hover:scale-[1] transition">
+              <li key={i} className="p-3 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
                 <div className="flex items-center gap-2">{skill.icon}<span>{skill.text}</span></div>
               </li>
             ))}
@@ -103,7 +104,7 @@ export default function HomePage() {
         </section>
 
         <section id="projects" className="reveal-on-scroll">
-          <h2 className="text-xl font-bold mb-2 border-b pb-2 border-slate-500"><FaProjectDiagram className="mr-2" />Projects</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaProjectDiagram className="mr-2" />Projects</h2>
           <div className="space-y-4">
             {projects.map((project, i) => (
               <Card key={i}>
@@ -135,7 +136,7 @@ export default function HomePage() {
         </section>
 
         <section id="passions" className="reveal-on-scroll">
-          <h2 className="text-xl font-bold mb-2 border-b pb-2 border-slate-500"><FaHeart className="mr-2" />Passions</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaHeart className="mr-2" />Passions</h2>
           <ul className="list-disc pl-5 space-y-1 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition" >
             {passions.map((item, i) => (
               <li key={i}>{item}</li>
@@ -144,7 +145,7 @@ export default function HomePage() {
         </section>
 
         <section id="contact" className="reveal-on-scroll">
-          <h2 className="text-xl font-bold mb-2 border-b pb-2 border-slate-500">Contact</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b pb-2 border-slate-500 flex items-center"><FaAddressCard className="mr-2" />Contact</h2>
           <ul className="space-y-2 dark:bg-slate-800 rounded shadow hover:scale-[1.02] transition">
             <li><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com">mahesh.gutam8686@gmail.com</a></li>
             <li><FaMobileAlt className="inline mr-2" /> <a href="tel:+919912299262">+91 9912299262</a></li>
