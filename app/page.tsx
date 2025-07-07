@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="space-y-4">
             {projects.map((project, i) => (
               <Card key={i}>
-                <CardContent className="py-4">
+                <CardContent className="py-4 rounded shadow hover:scale-[1.02] transition">
                   <h3 className="font-semibold">{project.title}</h3>
                   <p className="text-sm mt-1">{project.description}</p>
                 </CardContent>
@@ -121,13 +121,13 @@ export default function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold mb-2">Certifications</h3>
-                <ul className="list-disc pl-5">
+                <ul className="list-disc pl-5 rounded shadow hover:scale-[1.02] transition">
                   {achievements.certifications.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </div>
               <div>
                 <h3 className="font-semibold mb-2">Awards</h3>
-                <ul className="list-disc pl-5">
+                <ul className="list-disc pl-5 rounded shadow hover:scale-[1.02] transition">
                   {achievements.awards.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </div>            
@@ -136,7 +136,7 @@ export default function HomePage() {
 
         <section id="passions" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Passions</h2>
-          <ul className="list-disc pl-5 space-y-1">
+          <ul className="list-disc pl-5 space-y-1 rounded shadow hover:scale-[1.02] transition" >
             {passions.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -145,7 +145,7 @@ export default function HomePage() {
 
         <section id="contact" className="reveal-on-scroll">
           <h2 className="text-xl font-bold mb-2">Contact</h2>
-          <ul className="space-y-2">
+          <ul className="space-y-2 rounded shadow hover:scale-[1.02] transition">
             <li><FaEnvelope className="inline mr-2" /> <a href="mailto:mahesh.gutam8686@gmail.com">mahesh.gutam8686@gmail.com</a></li>
             <li><FaMobileAlt className="inline mr-2" /> <a href="tel:+919912299262">+91 9912299262</a></li>
             <li><FaLinkedin className="inline mr-2" /> <a href="https://linkedin.com/in/mahesh-kumar-gutam" target="_blank">LinkedIn</a></li>
